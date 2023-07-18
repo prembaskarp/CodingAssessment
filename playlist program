@@ -1,0 +1,45 @@
+package otppackage;
+import java.util.LinkedList;
+
+public class Playlist {
+    private LinkedList<String> songs;
+    private int capacity;
+
+    public Playlist(int capacity) {
+        this.songs = new LinkedList<String>();
+        this.capacity = capacity;
+    }
+
+    public void addSong(String song) {
+        if (songs.size() >= capacity) {
+            songs.removeFirst();
+        }
+        songs.addLast(song);
+    }
+
+    public void printPlaylist() {
+    	 System.out.println("Current Playlist: ");
+        for (String song : songs) {
+           System.out.print(song + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Playlist playlist = new Playlist(3);
+
+        playlist.addSong("S1");
+        playlist.addSong("S2");
+        playlist.addSong("S3");
+        playlist.printPlaylist();
+
+        playlist.addSong("S4");
+        playlist.printPlaylist();
+
+        playlist.addSong("S2");
+        playlist.printPlaylist();
+
+        playlist.addSong("S1");
+        playlist.printPlaylist();
+    }
+}
