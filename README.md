@@ -1,4 +1,4 @@
-# CodingAssment
+# CodingAssessment
 Install Java Jdk 1.8 or above
 
 configure this with system Variables
